@@ -1,8 +1,8 @@
 let sun = 320
-let furby
+let dragon
 
 function preload(){
-furby = loadImage('furby.png')
+dragon = loadImage('dragon.png')
 }
 
 function setup() {
@@ -12,24 +12,31 @@ function setup() {
 
 function draw() {
 
+  //blue background
   background(158, 223, 255);
 
-  image(furby, windowWidth/2, windowHeight/2)
+  //dragon image
+  image(dragon, 800, 200)
   
+  //sun
   fill(255, 198, 117);
   noStroke();
   ellipse(sun, 50, 250);
   fill(246, 252, 126);
   ellipse(sun, 50, 225);
   
+  //bridge stands
   fill(54, 10, 16);
-  rect(0, 300, 100, 400);
-  rect(550, 300, 100, 400);
+  rect(0, 300, 100, 500);
+  rect(550, 300, 100, 500);
   
+  //bridge lines
   stroke(1);
   strokeWeight(2);
   line(100, 400, 550, 400);
   
+
+  //bridge
   line(100, 350, 550, 350);
   rect(92,350,10,50);
   rect(120,350,10,50);
@@ -48,28 +55,36 @@ function draw() {
   rect(510,350,10,50);
   rect(540,350,10,50);
   
+
+  // mouse
   fill(43, 147, 255);
   ellipse(mouseX, mouseY, 20, 20);
   
+  // water
+  fill(15, 51, 255);
+  noStroke();
+  rect(100, 500, 450, 500);
 
   //print(mouseY)
   
+  // moves water up
   if(mouseY > 500){
     fill(15, 51, 255);
-    rect(100,500, 450, 150)
+    rect(100, 450, 450, 500)
     noStroke();
   }
+// mouse is pressed
+//  if(keyIsPressed == true){
+//    x = 100
+//    fill(255, 25, 52);
+//    rect(100, 450, 450, 500);
+//    noStroke();
+//  } else {
+//    fill(15, 51, 255);
+//    rect(100, 450, 450, 500);
+//    noStroke();
+//      x = 600
+//  }
 
-  //if(keyIsPressed == true){
-  //  x = 100
-  //    background(197,60,207)
-  //} else {
-  //    background(53, 180, 100)
-  //    x = 600
-  //}
-
-
-
-  
 
 }
